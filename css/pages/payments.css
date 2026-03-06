@@ -1,0 +1,22 @@
+/* payments.css */
+.payment-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.pay-stat {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 18px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pay-stat-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.pay-stat-val  { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
+.pay-stat-lbl  { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+@media (max-width: 1024px) { .payment-summary { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .payment-summary { grid-template-columns: 1fr; } }

@@ -1,0 +1,5 @@
+/* contact.css */
+.message-preview { max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; color: var(--text-muted); }
+.contact-unread { font-weight: 700; }
+.contact-unread td:first-of-type { position: relative; }
+.contact-unread td:first-of-type::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--primary); border-radius: 0 2px 2px 0; }

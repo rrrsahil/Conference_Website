@@ -1,0 +1,506 @@
+/* ============================================================
+   CONFERENCE ADMIN PANEL — RESPONSIVE CSS
+   responsive.css — All media queries and responsive layouts
+   ============================================================ */
+
+/* ============================================================
+   BREAKPOINTS:
+   Mobile:  480px
+   Tablet:  768px
+   Laptop:  1024px
+   Desktop: 1200px
+   ============================================================ */
+
+/* ============================================================
+   LARGE DESKTOP (default styles in style.css)
+   ============================================================ */
+
+/* ============================================================
+   LAPTOP / MEDIUM DESKTOP  ≤ 1200px
+   ============================================================ */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar-search {
+    max-width: 260px;
+  }
+}
+
+/* ============================================================
+   LAPTOP  ≤ 1024px
+   ============================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .navbar-search {
+    max-width: 220px;
+  }
+
+  .map-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   TABLET  ≤ 768px
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Sidebar collapse on tablet */
+  .sidebar {
+    transform: translateX(-100%);
+    width: var(--sidebar-width) !important;
+    z-index: 1100;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0) !important;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  /* Navbar full width */
+  .navbar {
+    left: 0 !important;
+  }
+
+  /* Main content full width */
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  .navbar-search {
+    display: none;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Modal */
+  .modal {
+    max-width: 100%;
+    margin: var(--space-sm);
+    max-height: 95vh;
+  }
+
+  .modal-lg,
+  .modal-sm {
+    max-width: 100%;
+  }
+
+  /* Table toolbar */
+  .table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-search {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .table-filters {
+    width: 100%;
+  }
+
+  /* Responsive table */
+  .table-responsive-card tbody tr {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .table-responsive-card tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px var(--space-sm);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .table-responsive-card tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .table-responsive-card tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    min-width: 100px;
+  }
+
+  .table-responsive-card thead {
+    display: none;
+  }
+
+  /* Pagination */
+  .table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .main-content {
+    padding: var(--space-md);
+  }
+
+  .navbar {
+    padding: 0 var(--space-md);
+  }
+
+  .navbar-admin .admin-name {
+    display: none;
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 480px
+   ============================================================ */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: var(--space-md);
+  }
+
+  .page-header-left .page-title {
+    font-size: 20px;
+  }
+
+  .filter-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-xs);
+  }
+
+  .filter-tab {
+    flex-shrink: 0;
+  }
+
+  .action-btns {
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 7px 14px;
+  }
+
+  .btn-sm {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .navbar-title {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: var(--space-md);
+  }
+
+  .modal {
+    max-height: 100vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    animation: slideUpMobile 0.3s ease;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .modal-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pagination .page-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .main-content {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ============================================================
+   AUTH PAGES
+   ============================================================ */
+@media (max-width: 768px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    width: 100%;
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-right {
+    padding: var(--space-md);
+  }
+
+  .auth-card {
+    padding: var(--space-lg);
+  }
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   DASHBOARD CHARTS
+   ============================================================ */
+@media (max-width: 1024px) {
+  .dashboard-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 180px;
+  }
+}
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+@media (max-width: 768px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-sidebar {
+    display: none;
+  }
+}
+
+/* ============================================================
+   REPORTS — FIX T5: was .reports-grid (wrong class), actual class is .report-grid
+   ============================================================ */
+@media (max-width: 768px) {
+  .report-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .report-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   GALLERY DETAIL
+   ============================================================ */
+@media (max-width: 1024px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-detail-panel {
+    display: none;
+  }
+}
+
+/* ============================================================
+   SCHEDULE
+   ============================================================ */
+@media (max-width: 768px) {
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   PAYMENTS — FIX T5: 4-col grid needs responsive breakpoints
+   ============================================================ */
+@media (max-width: 1200px) {
+  .payment-summary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .payment-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .payment-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   SPONSORS — FIX T5: sponsor grid responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .sponsor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   REGISTRATION FEE — FIX T5: fee-grid responsive
+   ============================================================ */
+@media (max-width: 768px) {
+  .fee-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .fee-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   PAPER PAGE — FIX T5: paper status row wraps on mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  .paper-status-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .paper-status-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   MOBILE ANIMATIONS
+   ============================================================ */
+@keyframes slideUpMobile {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  .sidebar,
+  .navbar,
+  .action-btns,
+  .btn,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .card,
+  .table-wrapper {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}

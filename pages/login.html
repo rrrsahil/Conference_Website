@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — Conference Admin Panel</title>
+  <meta name="description" content="Login to the Conference Management Admin Panel" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/global/style.css" />
+  <link rel="stylesheet" href="../css/global/responsive.css" />
+  <link rel="stylesheet" href="../css/pages/login.css" />
+</head>
+<body>
+  <div class="auth-page">
+
+    <!-- Decorative floating elements -->
+    <div class="auth-decor">
+      <div class="decor-item"><i class="fa-solid fa-chart-pie"></i></div>
+      <div class="decor-item"><i class="fa-solid fa-envelope"></i></div>
+      <div class="decor-item"><i class="fa-solid fa-file-lines"></i></div>
+      <div class="decor-item"><i class="fa-solid fa-users"></i></div>
+    </div>
+
+    <div class="auth-container">
+
+      <!-- Header Branding -->
+      <div class="auth-header">
+        <div class="auth-logo">
+          <div class="auth-shield">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h1>Conference Admin Panel</h1>
+        </div>
+      </div>
+
+      <!-- Login Card -->
+      <div class="auth-card">
+        <h2 class="auth-card-title">Admin Login</h2>
+
+        <form id="loginForm" novalidate>
+
+          <!-- Email -->
+          <div class="auth-input-group">
+            <i class="fa-solid fa-envelope input-prefix"></i>
+            <input type="email" id="email" name="email" placeholder="admin@example.com" autocomplete="email" required />
+          </div>
+          <div class="form-error" id="emailError" style="margin-top:-10px; margin-bottom:10px;"></div>
+
+          <!-- Password -->
+          <div class="auth-input-group">
+            <i class="fa-solid fa-lock input-prefix"></i>
+            <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required />
+            <button type="button" class="toggle-pw" onclick="togglePassword('password', this)">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <div class="form-error" id="passwordError" style="margin-top:-10px; margin-bottom:10px;"></div>
+
+          <!-- Remember me + Forgot -->
+          <div class="auth-form-row">
+            <label class="form-check">
+              <input type="checkbox" id="remember" />
+              <span class="form-check-label">Remember me</span>
+            </label>
+            <a href="forgetpassword.html" style="font-size:13px; color:#6C63FF; font-weight:500;">Forgot Password?</a>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="auth-btn" id="loginBtn">
+            <i class="fa-solid fa-right-to-bracket" style="margin-right:8px;"></i>Log In
+          </button>
+
+        </form>
+
+        <!-- Copyright -->
+        <p class="auth-copyright">© 2024 Conference Admin. All rights reserved.</p>
+
+        <!-- Bottom links -->
+        <div class="auth-links-row">
+          <a href="#"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+          <span>|</span>
+          <a href="#">Contact Support</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(fieldId, btn) {
+      const field = document.getElementById(fieldId);
+      const icon = btn.querySelector('i');
+      if (field.type === 'password') {
+        field.type = 'text';
+        icon.className = 'fa-regular fa-eye-slash';
+      } else {
+        field.type = 'password';
+        icon.className = 'fa-regular fa-eye';
+      }
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const emailErr = document.getElementById('emailError');
+      const passErr = document.getElementById('passwordError');
+
+      emailErr.textContent = '';
+      passErr.textContent = '';
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailErr.textContent = 'Please enter a valid email address.';
+        valid = false;
+      }
+      if (!password || password.length < 6) {
+        passErr.textContent = 'Password must be at least 6 characters.';
+        valid = false;
+      }
+
+      if (valid) {
+        const btn = document.getElementById('loginBtn');
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px;"></i>Logging in...';
+        btn.disabled = true;
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1200);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* ============================================================
+   news.css — News Management Page Styles
+   FIX T2: icon visibility, card body flex layout, named action class, responsive grid
+   ============================================================ */
+
+/* News Card Grid */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+/* Individual Card */
+.news-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Image / Placeholder */
+.news-card-img {
+  height: 160px;
+  background: linear-gradient(135deg, var(--primary-light), rgba(108,99,255,0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* FIX T2: icon was nearly invisible at 0.3 opacity — bumped to 0.55 */
+  color: rgba(108,99,255,0.55);
+  font-size: 52px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.news-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card Body */
+.news-card-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column; /* FIX T2: enables margin-top:auto on actions */
+  flex: 1;
+  gap: 8px;
+}
+
+.news-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;                   /* standard — for future-proofing */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.news-card-meta i {
+  font-size: 10px;
+  margin-right: 2px;
+}
+
+/* FIX T2: named class replaces inline style="margin-top:10px; display:flex; gap:6px;" */
+.news-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;    /* pushes actions to bottom of card regardless of content height */
+  padding-top: 6px;
+}
+
+/* FIX T2 + T5: responsive grid breakpoints */
+@media (max-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+  .news-card-img {
+    height: 130px;
+  }
+}

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Conference Admin Panel</title>
+  <meta name="description" content="Conference Admin Dashboard — Overview of papers, revenue, and activity" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/global/style.css" />
+  <link rel="stylesheet" href="../css/global/responsive.css" />
+  <link rel="stylesheet" href="../css/pages/dashboard.css" />
+</head>
+<body>
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- ===================== SIDEBAR ===================== -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon">CA</div>
+    <div>
+      <div class="logo-text">Conference</div>
+      <div class="logo-sub">Admin Panel</div>
+    </div>
+  </div>
+
+  <div class="sidebar-profile">
+    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+    <div class="profile-info">
+      <div class="profile-name">Admin User</div>
+      <div class="profile-role">Super Admin</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section-title">Main Menu</div>
+
+    <div class="nav-item">
+      <a href="dashboard.html" class="nav-link active" data-tooltip="Dashboard">
+        <span class="nav-icon"><i class="fa-solid fa-gauge"></i></span>
+        <span class="nav-label">Dashboard</span>
+      </a>
+    </div>
+
+    <div class="nav-section-title">Management</div>
+
+    <div class="nav-item">
+      <a href="committee.html" class="nav-link" data-tooltip="Committee">
+        <span class="nav-icon"><i class="fa-solid fa-people-group"></i></span>
+        <span class="nav-label">Committee</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="key-dates.html" class="nav-link" data-tooltip="Key Dates">
+        <span class="nav-icon"><i class="fa-solid fa-calendar-days"></i></span>
+        <span class="nav-label">Key Dates</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="speakers.html" class="nav-link" data-tooltip="Speakers">
+        <span class="nav-icon"><i class="fa-solid fa-microphone"></i></span>
+        <span class="nav-label">Speakers</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="schedule.html" class="nav-link" data-tooltip="Schedule">
+        <span class="nav-icon"><i class="fa-solid fa-clock"></i></span>
+        <span class="nav-label">Schedule</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="news.html" class="nav-link" data-tooltip="News">
+        <span class="nav-icon"><i class="fa-solid fa-newspaper"></i></span>
+        <span class="nav-label">News</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="gallery.html" class="nav-link" data-tooltip="Gallery">
+        <span class="nav-icon"><i class="fa-solid fa-images"></i></span>
+        <span class="nav-label">Gallery</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="sponsors.html" class="nav-link" data-tooltip="Sponsors">
+        <span class="nav-icon"><i class="fa-solid fa-handshake"></i></span>
+        <span class="nav-label">Sponsors</span>
+      </a>
+    </div>
+
+    <div class="nav-section-title">Research</div>
+
+    <div class="nav-item">
+      <a href="paper.html" class="nav-link" data-tooltip="Papers">
+        <span class="nav-icon"><i class="fa-solid fa-file-alt"></i></span>
+        <span class="nav-label">Papers</span>
+        <span class="nav-badge">2247</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="author.html" class="nav-link" data-tooltip="Authors">
+        <span class="nav-icon"><i class="fa-solid fa-pen-nib"></i></span>
+        <span class="nav-label">Authors</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="reviewer.html" class="nav-link" data-tooltip="Reviewers">
+        <span class="nav-icon"><i class="fa-solid fa-user-check"></i></span>
+        <span class="nav-label">Reviewers</span>
+      </a>
+    </div>
+
+    <div class="nav-section-title">Finance</div>
+
+    <div class="nav-item">
+      <a href="payments.html" class="nav-link" data-tooltip="Payments">
+        <span class="nav-icon"><i class="fa-solid fa-credit-card"></i></span>
+        <span class="nav-label">Payments</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="registerfee.html" class="nav-link" data-tooltip="Registration Fees">
+        <span class="nav-icon"><i class="fa-solid fa-receipt"></i></span>
+        <span class="nav-label">Registration Fees</span>
+      </a>
+    </div>
+
+    <div class="nav-section-title">Communication</div>
+
+    <div class="nav-item">
+      <a href="announcements.html" class="nav-link" data-tooltip="Announcements">
+        <span class="nav-icon"><i class="fa-solid fa-bullhorn"></i></span>
+        <span class="nav-label">Announcements</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="contact.html" class="nav-link" data-tooltip="Contact Messages">
+        <span class="nav-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+        <span class="nav-label">Contact Messages</span>
+        <span class="nav-badge">5</span>
+      </a>
+    </div>
+
+    <div class="nav-section-title">Other</div>
+
+    <div class="nav-item">
+      <a href="reports.html" class="nav-link" data-tooltip="Reports">
+        <span class="nav-icon"><i class="fa-solid fa-chart-bar"></i></span>
+        <span class="nav-label">Reports</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="conference.html" class="nav-link" data-tooltip="Conference">
+        <span class="nav-icon"><i class="fa-solid fa-building-columns"></i></span>
+        <span class="nav-label">Conference</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="settings.html" class="nav-link" data-tooltip="Settings">
+        <span class="nav-icon"><i class="fa-solid fa-gear"></i></span>
+        <span class="nav-label">Settings</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="login.html" class="logout-link">
+      <span class="nav-icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+      <span class="nav-label">Logout</span>
+    </a>
+  </div>
+</aside>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-left">
+    <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div>
+      <div class="navbar-title">Conference Admin</div>
+      <div class="navbar-subtitle">ITMASET 2024</div>
+    </div>
+  </div>
+
+  <div class="navbar-search">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="search" placeholder="Search papers, people..." id="globalSearch" />
+  </div>
+
+  <div class="navbar-right">
+    <button class="nav-icon-btn" title="Notifications">
+      <i class="fa-solid fa-bell"></i>
+      <span class="badge">4</span>
+    </button>
+    <button class="nav-icon-btn" title="Messages">
+      <i class="fa-solid fa-envelope"></i>
+      <span class="badge">2</span>
+    </button>
+    <div class="navbar-admin">
+      <div class="admin-avatar"><i class="fa-solid fa-user"></i></div>
+      <span class="admin-name">Admin</span>
+      <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== MAIN CONTENT ===================== -->
+<main class="main-content" id="mainContent">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-header-left">
+      <div class="breadcrumb">
+        <i class="fa-solid fa-house"></i>
+        <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <span>Dashboard</span>
+      </div>
+      <h1 class="page-title">Dashboard</h1>
+      <p class="page-subtitle">Welcome back, Admin! Here's what's happening today.</p>
+    </div>
+    <div class="page-header-right">
+      <button class="btn btn-secondary btn-sm">
+        <i class="fa-solid fa-download"></i> Export Report
+      </button>
+      <button class="btn btn-primary btn-sm">
+        <i class="fa-solid fa-plus"></i> Quick Add
+      </button>
+    </div>
+  </div>
+
+  <!-- ---- Stats Cards ---- -->
+  <div class="dashboard-stats">
+    <div class="stat-card gradient-purple">
+      <div class="stat-icon"><i class="fa-solid fa-file-alt"></i></div>
+      <div class="stat-info">
+        <div class="stat-value">2,247</div>
+        <div class="stat-label">Total Paper Submissions</div>
+        <div class="stat-change up"><i class="fa-solid fa-arrow-up"></i> +12% this month</div>
+      </div>
+    </div>
+    <div class="stat-card gradient-green">
+      <div class="stat-icon"><i class="fa-solid fa-check-circle"></i></div>
+      <div class="stat-info">
+        <div class="stat-value">927</div>
+        <div class="stat-label">Accepted Papers</div>
+        <div class="stat-change up"><i class="fa-solid fa-arrow-up"></i> +8% this week</div>
+      </div>
+    </div>
+    <div class="stat-card gradient-orange">
+      <div class="stat-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="stat-info">
+        <div class="stat-value">1,223</div>
+        <div class="stat-label">Under Review</div>
+        <div class="stat-change"><i class="fa-solid fa-minus"></i> Stable</div>
+      </div>
+    </div>
+    <div class="stat-card gradient-red">
+      <div class="stat-icon"><i class="fa-solid fa-xmark-circle"></i></div>
+      <div class="stat-info">
+        <div class="stat-value">625</div>
+        <div class="stat-label">Rejected Papers</div>
+        <div class="stat-change down"><i class="fa-solid fa-arrow-down"></i> -3% this week</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- Charts Row 1 ---- -->
+  <div class="dashboard-charts">
+
+    <!-- Revenue Card -->
+    <div class="revenue-card">
+      <div class="currency-symbol"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+      <div class="revenue-amount">8,21,533</div>
+      <div class="revenue-label" style="font-weight:600; font-size:15px;">Total Conference Revenue</div>
+      <div class="revenue-sub"><i class="fa-solid fa-indian-rupee-sign"></i> 8,21,533</div>
+      <div class="revenue-change">
+        <i class="fa-solid fa-arrow-trend-up"></i> +12% from last conference
+      </div>
+    </div>
+
+    <!-- Paper Category Distribution -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Paper Category Distribution</div>
+        </div>
+      </div>
+      <div class="chart-pie-wrapper">
+        <div class="donut-chart"></div>
+        <div class="pie-category" style="flex:1;">
+          <div class="pie-row">
+            <span class="pie-dot" style="background:#6C63FF;"></span>
+            <span class="pie-label">AI &amp; Machine Learning</span>
+            <span class="pie-pct">35%</span>
+          </div>
+          <div class="pie-row">
+            <span class="pie-dot" style="background:#8B5CF6;"></span>
+            <span class="pie-label">Cyber Security</span>
+            <span class="pie-pct">20%</span>
+          </div>
+          <div class="pie-row">
+            <span class="pie-dot" style="background:#3B82F6;"></span>
+            <span class="pie-label">Data Science</span>
+            <span class="pie-pct">25%</span>
+          </div>
+          <div class="pie-row">
+            <span class="pie-dot" style="background:#F59E0B;"></span>
+            <span class="pie-label">IoT</span>
+            <span class="pie-pct">20%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- Charts Row 2 ---- -->
+  <div class="dashboard-charts">
+
+    <!-- Quick Actions -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Quick Actions</div>
+      </div>
+      <div class="quick-actions">
+        <a href="reviewer.html" class="quick-action-btn">
+          <span><i class="fa-solid fa-plus" style="margin-right:8px;"></i>Add Reviewer</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="conference.html" class="quick-action-btn">
+          <span><i class="fa-solid fa-plus" style="margin-right:8px;"></i>Add Conference Track</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="announcements.html" class="quick-action-btn">
+          <span><i class="fa-solid fa-bullhorn" style="margin-right:8px;"></i>Send Announcement</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="paper.html" class="quick-action-btn">
+          <span><i class="fa-solid fa-file-export" style="margin-right:8px;"></i>Export Paper List</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Daily Registration Activity -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Daily Registration Activity</div>
+        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-pause"></i></button>
+      </div>
+      <div style="display:flex; align-items:flex-end; gap:0;">
+        <div class="y-labels">
+          <span>1000</span><span>800</span><span>600</span><span>400</span><span>200</span><span>0</span>
+        </div>
+        <div style="flex:1;">
+          <div class="bar-chart" style="height:180px;">
+            <div class="bar" style="height:35%;"></div>
+            <div class="bar secondary" style="height:15%;"></div>
+            <div class="bar" style="height:45%;"></div>
+            <div class="bar secondary" style="height:20%;"></div>
+            <div class="bar" style="height:30%;"></div>
+            <div class="bar secondary" style="height:12%;"></div>
+            <div class="bar" style="height:60%;"></div>
+            <div class="bar secondary" style="height:25%;"></div>
+            <div class="bar" style="height:40%;"></div>
+            <div class="bar" style="height:80%;"></div>
+            <div class="bar secondary" style="height:50%;"></div>
+            <div class="bar" style="height:90%;"></div>
+          </div>
+          <div class="bar-labels">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- Charts Row 3 ---- -->
+  <div class="dashboard-charts">
+
+    <!-- Review Progress -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Review Progress</div>
+        <a href="reviewer.html" class="btn btn-outline-primary btn-sm">View All</a>
+      </div>
+      <div class="track-item">
+        <div class="track-header"><span class="track-name">AI Track</span><span class="track-pct">70%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:70%; background:linear-gradient(90deg,#6C63FF,#8B5CF6);"></div></div>
+      </div>
+      <div class="track-item">
+        <div class="track-header"><span class="track-name">IoT Track</span><span class="track-pct">40%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:40%; background:linear-gradient(90deg,#3B82F6,#2563EB);"></div></div>
+      </div>
+      <div class="track-item">
+        <div class="track-header"><span class="track-name">Cyber Security</span><span class="track-pct">60%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:60%; background:linear-gradient(90deg,#8B5CF6,#7C3AED);"></div></div>
+      </div>
+      <div class="track-item">
+        <div class="track-header"><span class="track-name">Data Science</span><span class="track-pct">80%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:80%; background:linear-gradient(90deg,#F59E0B,#D97706);"></div></div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Recent Activity</div>
+        <span class="badge badge-success">Live</span>
+      </div>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="activity-icon" style="background:#EDE9FF; color:#6C63FF;"><i class="fa-solid fa-file-alt"></i></div>
+          <div class="activity-content">
+            <div class="activity-text"><strong>New paper submitted</strong> — "Deep Learning for IoT"</div>
+            <div class="activity-time"><i class="fa-regular fa-clock"></i> 2 minutes ago</div>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon" style="background:#D1FAE5; color:#10B981;"><i class="fa-solid fa-check"></i></div>
+          <div class="activity-content">
+            <div class="activity-text"><strong>Paper accepted</strong> — "Blockchain Security" by John Doe</div>
+            <div class="activity-time"><i class="fa-regular fa-clock"></i> 15 minutes ago</div>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon" style="background:#FEF3C7; color:#F59E0B;"><i class="fa-solid fa-user-plus"></i></div>
+          <div class="activity-content">
+            <div class="activity-text"><strong>New reviewer added</strong> — Dr. Emily Wang</div>
+            <div class="activity-time"><i class="fa-regular fa-clock"></i> 1 hour ago</div>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon" style="background:#DBEAFE; color:#3B82F6;"><i class="fa-solid fa-credit-card"></i></div>
+          <div class="activity-content">
+            <div class="activity-text"><strong>Payment received</strong> — ₹5,000 from Alex Turner</div>
+            <div class="activity-time"><i class="fa-regular fa-clock"></i> 2 hours ago</div>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-icon" style="background:#FEE2E2; color:#EF4444;"><i class="fa-solid fa-xmark"></i></div>
+          <div class="activity-content">
+            <div class="activity-text"><strong>Paper rejected</strong> — "Cyber Computing Systems"</div>
+            <div class="activity-time"><i class="fa-regular fa-clock"></i> 3 hours ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---- Paper Submission Trends (Full Width) ---- -->
+  <div class="card mb-lg">
+    <div class="card-header">
+      <div class="card-title">Paper Submission Trends</div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <span class="badge badge-purple" style="font-size:11px;">2024</span>
+        <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-download"></i> Export</button>
+      </div>
+    </div>
+    <!-- SVG Line Chart -->
+    <div class="line-chart" style="height:220px;">
+      <svg viewBox="0 0 900 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6C63FF" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#6C63FF" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- Grid lines -->
+        <line x1="0" y1="40"  x2="900" y2="40"  stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4"/>
+        <line x1="0" y1="80"  x2="900" y2="80"  stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4"/>
+        <line x1="0" y1="120" x2="900" y2="120" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4"/>
+        <line x1="0" y1="160" x2="900" y2="160" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4"/>
+        <!-- Area fill -->
+        <path d="M 0,180 C 100,170 150,140 200,120 C 260,95 310,85 380,80 C 450,75 510,65 580,55 C 650,45 720,42 800,30 L 900,20 L 900,200 L 0,200 Z"
+              fill="url(#lineGrad)" />
+        <!-- Line -->
+        <path d="M 0,180 C 100,170 150,140 200,120 C 260,95 310,85 380,80 C 450,75 510,65 580,55 C 650,45 720,42 800,30 L 900,20"
+              fill="none" stroke="#6C63FF" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <!-- Data points -->
+        <circle cx="0"   cy="180" r="4" fill="#6C63FF" stroke="#fff" stroke-width="2"/>
+        <circle cx="200" cy="120" r="4" fill="#6C63FF" stroke="#fff" stroke-width="2"/>
+        <circle cx="380" cy="80"  r="4" fill="#6C63FF" stroke="#fff" stroke-width="2"/>
+        <circle cx="580" cy="55"  r="4" fill="#6C63FF" stroke="#fff" stroke-width="2"/>
+        <circle cx="800" cy="30"  r="4" fill="#6C63FF" stroke="#fff" stroke-width="2"/>
+        <circle cx="900" cy="20"  r="4" fill="#8B5CF6" stroke="#fff" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="bar-labels" style="justify-content:space-between; padding:0 16px;">
+      <span>Jan</span><span>6-6</span><span>Feb</span><span>Mar</span><span>Mar</span><span>Apr</span><span>May</span>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Sidebar Toggle
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const navbar  = document.getElementById('navbar');
+    const main    = document.getElementById('mainContent');
+
+    if (window.innerWidth <= 768) {
+      sidebar.classList.toggle('mobile-open');
+      overlay.classList.toggle('active');
+    } else {
+      sidebar.classList.toggle('collapsed');
+      navbar.classList.toggle('collapsed');
+      main.classList.toggle('collapsed');
+    }
+  }
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    if (window.innerWidth > 768) {
+      sidebar.classList.remove('mobile-open');
+      overlay.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>

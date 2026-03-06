@@ -1,0 +1,92 @@
+/* sponsors.css */
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.sponsor-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.sponsor-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.sponsor-logo {
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--text-muted);
+}
+.sponsor-name { font-size: 15px; font-weight: 700; font-family: 'Poppins', sans-serif; color: var(--text); margin-bottom: 4px; }
+.sponsor-tier { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: var(--radius-full); margin-bottom: 8px; }
+.tier-gold     { background: #FEF3C7; color: #B45309; }
+.tier-silver   { background: #F1F5F9; color: #475569; }
+.tier-bronze   { background: #FEF0E7; color: #92400E; }
+.tier-platinum { background: var(--primary-light); color: var(--primary); }
+
+/* FIX T4: sponsor-grid missing from sponsors.css */
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.sponsor-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border);
+  padding: 24px 16px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.sponsor-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.sponsor-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-lg);
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--primary);
+}
+.sponsor-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius-md); }
+.sponsor-name { font-size: 14px; font-weight: 700; color: var(--text); font-family: 'Poppins', sans-serif; }
+.sponsor-tier {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.tier-platinum { background: linear-gradient(135deg,#e5e4ff,#c7c4ff); color: #3730a3; }
+.tier-gold     { background: linear-gradient(135deg,#fef9c3,#fde68a); color: #78350f; }
+.tier-silver   { background: linear-gradient(135deg,#f1f5f9,#e2e8f0); color: #475569; }
+.tier-bronze   { background: linear-gradient(135deg,#ffedd5,#fed7aa); color: #92400e; }
