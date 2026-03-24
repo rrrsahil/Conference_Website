@@ -1,0 +1,312 @@
+/* ================= HERO ================= */
+
+.apc-hero {
+  padding: 70px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+}
+
+.apc-hero h1 {
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.apc-hero p {
+  max-width: 600px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+.apc-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+/* ================= SECTION ================= */
+
+.apc-section {
+  padding: 30px 20px;
+}
+
+.apc-light {
+  background: var(--bg-light);
+}
+
+.apc-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary);
+  font-size: 26px;
+}
+
+/* ================= INFO CARDS ================= */
+
+.apc-info-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.apc-info-card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.apc-info-card:hover {
+  transform: translateY(-5px);
+}
+
+.apc-info-card i {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.apc-info-card a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* ================= TEAM ================= */
+
+.apc-team-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.apc-team-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid var(--border-light);
+}
+
+.apc-team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= SUPPORT ================= */
+
+.apc-support-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.apc-support-card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.apc-support-card:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ================= FORM ================= */
+
+.apc-form-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.apc-form-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.apc-form-box h2 {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.apc-form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.apc-form-box input,
+.apc-form-box select,
+.apc-form-box textarea {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.apc-form-box input:focus,
+.apc-form-box select:focus,
+.apc-form-box textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.apc-btn {
+  background: var(--primary);
+  color: #fff;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.apc-btn:hover {
+  background: var(--secondary);
+}
+
+/* ================= SIDE BOX ================= */
+
+.apc-side-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.apc-side-box img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.apc-side-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.apc-side-box ul li {
+  margin-bottom: 10px;
+}
+
+.apc-side-box ul li a {
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.apc-side-box ul li a:hover {
+  color: var(--primary);
+}
+
+/* ================= SOCIAL ================= */
+
+.apc-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.apc-social a {
+  width: 35px;
+  height: 35px;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.apc-social a:hover {
+  background: var(--secondary);
+}
+
+/* ================= FAQ ================= */
+
+.apc-faq details {
+  margin-bottom: 12px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+}
+
+.apc-faq summary {
+  font-weight: 600;
+}
+
+/* ================= MAP ================= */
+
+iframe {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ================= CTA ================= */
+
+.apc-cta {
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+}
+
+.apc-cta h2 {
+  margin-bottom: 10px;
+}
+
+.apc-cta p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+
+  .apc-info-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .apc-team-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .apc-support-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .apc-form-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .apc-hero h1 {
+    font-size: 28px;
+  }
+
+  .apc-section {
+    padding: 40px 15px;
+  }
+
+}

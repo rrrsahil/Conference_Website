@@ -1,0 +1,270 @@
+/* =====================================================
+   KEY DATES PAGE (PREFIX: apk-)
+   ===================================================== */
+
+.apk-hero {
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apk-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+  backdrop-filter: blur(6px);
+}
+
+.apk-hero h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.apk-hero p {
+  opacity: 0.9;
+}
+
+/* ================= SECTION ================= */
+
+.apk-section {
+  padding: 60px 20px;
+}
+
+.apk-table-wrapper {
+  overflow-x: auto;
+}
+
+/* ================= TABLE ================= */
+
+.apk-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.apk-table thead {
+  background: var(--primary);
+  color: #fff;
+}
+
+.apk-table th,
+.apk-table td {
+  padding: 16px;
+  text-align: left;
+}
+
+.apk-table th {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* ================= ROW STYLE ================= */
+
+.apk-table tbody tr {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.apk-table tbody tr:hover {
+  background: var(--bg-light);
+  transform: scale(1.01);
+}
+
+/* ================= SPECIAL ROWS ================= */
+
+.apk-highlight {
+  background: #fff5f5 !important;
+}
+
+.apk-conference {
+  background: #e8f0ff !important;
+}
+
+/* ================= ACTIVE DEADLINE (NEW) ================= */
+
+.apk-active-deadline {
+  border-left: 5px solid #4caf50;
+  background: #eafaf1 !important;
+  position: relative;
+  animation: pulseGlow 1.8s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0.3);
+  }
+}
+
+/* ================= BADGES ================= */
+
+.apk-badge {
+  background: #ff9800;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* NEXT DEADLINE TAG */
+.apk-live {
+  background: #4caf50;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* ================= STRIKE ================= */
+
+.apk-strike {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+/* ================= MOBILE STACK MODE ================= */
+
+@media (max-width: 768px) {
+
+  .apk-table {
+    min-width: 100%;
+  }
+
+  .apk-table thead {
+    display: none;
+  }
+
+  .apk-table tbody tr {
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .apk-table td {
+    display: block;
+    padding: 8px 10px;
+  }
+
+  .apk-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary);
+  }
+
+  .apk-active-deadline {
+    border-left: none;
+    border-left: 5px solid #4caf50;
+  }
+  
+  .apk-highlight {
+    border-left: 4px solid #ff5252;
+  }
+}
+
+/* ================= SMOOTH TEXT ALIGNMENT ================= */
+
+.apk-table td span {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* ================= BETTER STRIKE VISIBILITY ================= */
+
+.apk-strike {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+  opacity: 0.8;
+}
+
+/* ================= EXTENDED ROW BORDER ================= */
+
+.apk-highlight {
+  background: #fff5f5 !important;
+  border-left: 4px solid #ff5252;
+}
+
+/* ================= CONFERENCE EMPHASIS ================= */
+
+.apk-conference {
+  background: #e8f0ff !important;
+  font-weight: 500;
+}
+
+/* ================= BADGE ANIMATION ================= */
+
+.apk-badge {
+  background: #ff9800;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease;
+}
+
+.apk-live {
+  background: #4caf50;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ================= FADE ANIMATION ================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= HOVER IMPROVEMENT ================= */
+
+.apk-table tbody tr:hover {
+  background: var(--bg-light);
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ================= ACTIVE ROW TEXT EMPHASIS ================= */
+
+.apk-active-deadline td {
+  font-weight: 600;
+}

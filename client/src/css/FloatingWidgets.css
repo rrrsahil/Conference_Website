@@ -1,0 +1,217 @@
+/* ================= LEFT TAB ================= */
+.leftTab {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+  padding: 14px 10px;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.leftTab:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+}
+
+/* ================= RIGHT TAB ================= */
+.rightTab {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+  padding: 14px 10px;
+  border-radius: 12px 0 0 12px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.rightTab:hover {
+  transform: translateY(-50%) scale(1.08);
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+}
+
+/* ================= CONTACT BUTTON ================= */
+.contactBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.contactBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+}
+
+/* ================= IMPORTANT DATES BUTTON ================= */
+.datesBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  background: linear-gradient(135deg, var(--accent), var(--gradient-end));
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.datesBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, var(--gradient-start), var(--accent));
+}
+
+/* ================= BACKDROP ================= */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* ================= SLIDE PANEL ================= */
+.datesPanel {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 320px;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: -6px 0 25px rgba(0, 0, 0, 0.3);
+  transition: right 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.datesPanel.open {
+  right: 0;
+}
+
+/* ================= PANEL HEADER ================= */
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panelHeader h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.panelHeader span {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ================= SIMPLE LIST ================= */
+.simpleList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listItem {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* TITLE */
+.eventTitle {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* DATE */
+.eventDate {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= STATUS ================= */
+
+/* COMPLETED */
+.listItem.completed {
+  opacity: 0.6;
+}
+
+.done {
+  color: #00ff88;
+  font-size: 12px;
+}
+
+/* TODAY */
+.today {
+  background: red;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+/* LIVE */
+.live {
+  background: green;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+/* NEXT */
+.next {
+  background: orange;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px #ffd700; }
+  50% { box-shadow: 0 0 15px #ffd700; }
+  100% { box-shadow: 0 0 5px #ffd700; }
+}
+
+/* ================= OPTIONAL GLASS EFFECT ================= */
+.datesPanel {
+  backdrop-filter: blur(10px);
+}

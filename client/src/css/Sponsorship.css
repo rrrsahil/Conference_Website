@@ -1,0 +1,267 @@
+/* =====================================================
+   SPONSORSHIP PAGE (PREFIX: aps-)
+   Mobile First + Root Variables
+   ===================================================== */
+
+.aps-hero {
+  padding: 15px 0 40px 0;
+  text-align: center;
+  background: linear-gradient(135deg,var(--gradient-start),var(--gradient-end));
+  color: #fff;
+}
+
+.aps-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.aps-hero h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.aps-hero p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.aps-btn-primary {
+  background: #fff;
+  color: var(--primary);
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.aps-why {
+  padding: 50px 0;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.aps-why-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.aps-why-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.aps-stats {
+  padding: 40px 0;
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+}
+
+.aps-stats-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.aps-stats h3 {
+  font-size: 28px;
+}
+
+.aps-packages {
+  padding: 50px 0;
+  background: var(--bg-light);
+}
+
+.aps-package-grid {
+  display: grid;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.aps-package-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.aps-package-card h3 {
+  color: var(--primary);
+}
+
+.aps-price {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.aps-package-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.aps-package-card li {
+  margin-bottom: 8px;
+}
+
+.aps-btn-secondary {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.aps-logos {
+  padding: 30px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.aps-logo-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.aps-logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.aps-logo-box img {
+  width: 50px;
+  height: auto;
+}
+
+.aps-contact {
+  padding: 20px 0 50px 0;
+  text-align: center;
+  background: var(--gradient-end);
+  color: #fff;
+}
+
+.aps-btn-primary{
+  position: relative;
+  top: 20px;
+}
+
+@media (min-width: 768px) {
+  .aps-why-grid { grid-template-columns: repeat(2,1fr); }
+  .aps-stats-grid { grid-template-columns: repeat(4,1fr); }
+  .aps-package-grid { grid-template-columns: repeat(3,1fr); }
+  .aps-logo-grid { grid-template-columns: repeat(4,1fr); }
+}
+
+@media (min-width: 1024px) {
+  .aps-logo-grid {
+    grid-template-columns: repeat(5, 1fr); /* desktop */
+  }
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= MODAL ================= */
+
+.aps-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.aps-modal-content {
+  position: relative;
+
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+
+  transform: translateY(40px);
+  opacity: 0;
+  animation: slideUp 0.3s ease forwards;
+
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.aps-close {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #0d3b7a;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* CROSS BUTTON */
+
+.aps-close-icon {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+
+  background: transparent;
+  border: none;
+
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* HOVER EFFECT */
+
+.aps-close-icon:hover {
+  color: red;
+  transform: scale(1.2);
+}

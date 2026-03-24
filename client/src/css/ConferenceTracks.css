@@ -1,0 +1,202 @@
+/* ================= CONFERENCE TRACKS PAGE ================= */
+
+.apt-hero {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.apt-hero-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.apt-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.apt-hero h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.apt-hero p {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* TRACK GRID */
+
+.apt-tracks {
+  padding: 40px 0;
+  background: var(--bg-light);
+}
+
+.apt-track-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.apt-track-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.apt-track-card:hover {
+  transform: translateY(-6px);
+}
+
+.apt-track-card h3{
+  color: var(--primary);
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.apt-track-card li{
+  color: var(--primary);
+  padding-bottom: 5px;
+  margin: 5px;
+}
+
+/* ================= LANDSCAPE TIMELINE ================= */
+
+.apt-timeline {
+  padding: 60px 0;
+  background: #fff;
+  text-align: center;
+}
+
+/* Horizontal Scroll Container */
+
+.timeline-horizontal {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Line */
+
+.timeline-horizontal::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+}
+
+/* Card */
+
+.timeline-card {
+  min-width: 220px;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.timeline-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Dot */
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  border: 3px solid #fff;
+}
+
+/* Status Colors */
+
+.timeline-card.done .timeline-dot {
+  background: #00c853;
+}
+
+.timeline-card.next .timeline-dot {
+  background: #ff9800;
+}
+
+.timeline-card.upcoming .timeline-dot {
+  background: #9e9e9e;
+}
+
+/* Text */
+
+.timeline-card-content h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.timeline-card-content p {
+  font-size: 14px;
+  color: var(--primary);
+}
+
+/* CTA */
+
+.apt-cta {
+  padding: 30px 0;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+  text-align: center;
+}
+
+.apt-submit-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #fff;
+  color: var(--primary);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+  .apt-track-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .apt-hero h1 {
+    font-size: 42px;
+  }
+}

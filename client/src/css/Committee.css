@@ -1,0 +1,218 @@
+/* =====================================================
+   COMMITTEE PAGE (FINAL PERFECT VERSION - 5 CARDS ROW)
+   ===================================================== */
+
+/* ================= HERO ================= */
+.apc-hero {
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apc-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.apc-hero h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.apc-hero p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= SECTION ================= */
+.apc-section {
+  padding: 40px 15px;
+}
+
+.apc-light {
+  background: var(--bg-light);
+}
+
+.apc-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+/* ================= GRID BASE (MOBILE FIRST) ================= */
+.apc-grid {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 10px 20px;
+  scroll-behavior: smooth;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Scrollbar */
+.apc-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.apc-grid::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* ================= CARD ================= */
+.apc-card {
+  position: relative;
+  width: 220px;
+  height: 260px;
+  flex: 0 0 auto;
+
+  padding: 20px;
+  text-align: center;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.apc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= CHIEF CARD ================= */
+.apc-large {
+  width: 240px;
+  height: 280px;
+  margin: 0 auto;
+}
+
+/* ================= IMAGE ================= */
+.apc-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= TEXT ================= */
+.apc-card h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: var(--primary);
+  line-height: 1.3;
+}
+
+.apc-card p {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* ================= BADGE ================= */
+.apc-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: red;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Badge Colors */
+.apc-chief {
+  background: #ff9800;
+}
+.apc-blue {
+  background: #0d6efd;
+}
+.apc-purple {
+  background: #6f42c1;
+}
+.apc-green {
+  background: #198754;
+}
+
+/* =====================================================
+   DESKTOP VIEW (EXACT 5 CARDS PER ROW)
+   ===================================================== */
+@media (min-width: 768px) {
+  .apc-grid {
+    display: grid;
+
+    /* 🔥 EXACT 5 CARDS */
+    grid-template-columns: repeat(5, 1fr);
+
+    justify-items: center;
+    gap: 25px;
+
+    overflow: hidden;
+
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .apc-card {
+    width: 220px;
+  }
+}
+
+/* =====================================================
+   MOBILE VIEW (PERFECT CENTER FIRST CARD)
+   ===================================================== */
+@media (max-width: 600px) {
+  .apc-grid {
+    display: flex;
+    justify-content: flex-start;
+
+    scroll-snap-type: x mandatory;
+
+    padding-left: calc(50% - 110px);
+    padding-right: calc(50% - 110px);
+  }
+
+  .apc-card {
+    width: 190px;
+    height: 240px;
+    scroll-snap-align: center;
+  }
+
+  .apc-large {
+    width: 210px;
+    height: 260px;
+  }
+
+  .apc-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .apc-hero h1 {
+    font-size: 22px;
+  }
+}

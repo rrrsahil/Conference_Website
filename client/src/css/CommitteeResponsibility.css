@@ -1,0 +1,103 @@
+/* =====================================================
+   COMMITTEE RESPONSIBILITY PAGE (PREFIX: apr-)
+   ===================================================== */
+
+.apr-hero {
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apr-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.apr-hero h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.apr-hero p {
+  font-size: 14px;
+}
+
+.apr-section {
+  padding: 40px 20px;
+}
+.apr-light {
+  background: var(--bg-light);
+}
+
+.apr-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.apr-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.apr-card h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.apr-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.apr-card ul li {
+  font-size: 13px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.apr-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+/* Center Title Section */
+
+.apr-center-title {
+  padding: 20px 20px 0 20px;
+  text-align: center;
+}
+
+.apr-center-title h2 {
+  font-size: 22px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+  .apr-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .apr-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

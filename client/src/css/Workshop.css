@@ -1,0 +1,282 @@
+/* =====================================================
+   WORKSHOP PAGE (PREFIX: apws-)
+   Mobile First Responsive
+   ===================================================== */
+
+/* HERO */
+
+.apws-hero {
+  padding: 20px 0;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apws-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.apws-hero h1 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.apws-hero p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* WORKSHOP LIST */
+
+.apws-list-section {
+  padding: 20px 0;
+  background: var(--bg-light);
+}
+
+.apws-list-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.apws-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.apws-icon {
+  font-size: 28px;
+  color: var(--primary);
+}
+
+.apws-info h3 {
+  font-size: 18px;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+.apws-info p {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.apws-btn {
+  align-self: flex-start;
+  padding: 8px 18px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+/* EXPERTS */
+
+.apws-experts-section {
+  padding: 10px 0 50px 0; 
+  background: var(--bg-light);
+}
+
+.apws-section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: var(--primary);
+}
+
+.apws-experts-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr;
+}
+
+/* ================= SQUARE EXPERT CARD ================= */
+
+.apws-expert-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.apws-expert-card:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGE SQUARE FORMAT */
+.apws-expert-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;    
+  object-fit: cover;       
+  object-position: center top;
+  border-radius: 20px 20px 0 0;
+}
+
+/* TEXT */
+.apws-expert-card h4 {
+  margin-top: 15px;
+  font-size: 17px;
+  color: var(--primary);
+}
+
+.apws-expert-card span {
+  font-size: 13px;
+  color: var(--text-dark);
+  display: block;
+}
+
+
+/* CTA */
+
+.apws-cta {
+  padding: 30px 0;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  text-align: center;
+  color: #fff;
+}
+
+.apws-register-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #fff;
+  color: var(--gradient-end);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+  .apws-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .apws-experts-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .apws-hero h1 {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .apws-hero h1 {
+    font-size: 44px;
+  }
+}
+
+/* ================= MODAL ================= */
+
+.apws-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+
+  /* smooth fade */
+  animation: apwsFadeIn 0.3s ease;
+}
+
+@keyframes apwsFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.apws-modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+
+  max-width: 600px;
+  width: 90%;
+
+  position: relative;
+
+  /* smooth zoom */
+  animation: apwsScaleUp 0.3s ease;
+
+  /* IMPORTANT: long content scroll */
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes apwsScaleUp {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ================= CLOSE BUTTON (CROSS) ================= */
+
+.apws-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+
+  color: #333;
+  transition: 0.3s ease;
+}
+
+.apws-close:hover {
+  color: red;
+  transform: rotate(90deg);
+}
+
+/* ================= MODAL TEXT ================= */
+
+.apws-modal-content h2 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.apws-modal-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-dark);
+}

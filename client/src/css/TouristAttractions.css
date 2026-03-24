@@ -1,0 +1,262 @@
+/* ===================================================== 
+   TOURIST PAGE (PREFIX: apt-)
+   FINAL PREMIUM VERSION (FULL UPDATED)
+   ===================================================== */
+
+/* ================= HERO ================= */
+
+/* ===== HERO PERFECT CENTER FIX ===== */
+
+.apt-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 30px; */
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+
+  /* IMPORTANT */
+  position: relative;
+}
+
+/* Center container properly */
+.apt-hero .container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* PERFECT VISUAL CENTER ALIGN */
+.apt-hero h1,
+.apt-hero p,
+.apt-tag {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TEXT WIDTH CONTROL */
+.apt-hero p {
+  max-width: 600px;
+}
+
+/* ================= POSTER ================= */
+
+.apt-poster {
+  width: 100%;
+}
+
+.apt-poster img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  margin: 30px 0;
+}
+
+/* ================= SECTION ================= */
+
+.apt-section {
+  padding: 30px 20px;
+}
+
+.apt-light {
+  background: var(--bg-light);
+}
+
+.apt-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 26px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ================= SLIDER ================= */
+
+.apt-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.apt-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.apt-slider::-webkit-scrollbar-thumb {
+  background: rgba(92, 76, 76, 0.467);
+  border-radius: 10px;
+}
+
+/* ================= GRID ================= */
+
+.apt-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+
+.apt-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 15px;
+  min-width: 260px;
+  flex: 0 0 auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.apt-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.apt-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* ================= CARD BODY ================= */
+
+.apt-card-body {
+  padding: 5px 0;
+}
+
+.apt-card h3 {
+  margin-bottom: 6px;
+  color: var(--primary);
+  font-size: 16px;
+}
+
+.apt-card p {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.apt-card span {
+  font-size: 12px;
+  color: var(--secondary);
+}
+
+/* ================= RATING ================= */
+
+.apt-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.apt-rating i {
+  color: #ffb703;
+  font-size: 14px;
+}
+
+.apt-rating span {
+  font-size: 12px;
+  color: var(--secondary);
+}
+
+/* ================= CARD ACTIONS ================= */
+
+.apt-card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.apt-card-actions a {
+  text-decoration: none;
+  font-size: 16px;
+  background: var(--bg-light);
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.apt-card-actions a:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ================= CTA ================= */
+
+.apt-cta {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apt-cta h2 {
+  margin-bottom: 25px;
+}
+
+/* ================= BUTTONS ================= */
+
+.apt-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 5px;
+  background: #ffb703;
+  color: #000;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.apt-btn.secondary {
+  background: #fff;
+  color: var(--primary);
+}
+
+.apt-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+  .apt-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .apt-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .apt-hero h1 {
+    font-size: 42px;
+  }
+}

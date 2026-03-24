@@ -1,0 +1,342 @@
+/* ================= NAVBAR CODE START HERE================= */
+
+/* ================= TOP CONFERENCE HEADER ================= */
+
+.conference-top {
+  background: linear-gradient(90deg,#0a9dbf,#0d6efd);
+  padding: 5px 0;
+}
+
+.conference-container {
+  max-width: 1425px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 0 15px;
+}
+
+.conference-logo img {
+  width: 80px;
+}
+
+.conference-text h1 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.conference-text p {
+  color: #fff;
+  font-size: 15px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* ================= LOGO ================= */
+
+.logo h2 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ================= MENU ================= */
+
+.nav-center {
+  display: flex;
+}
+
+.nav-center ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-center li {
+  position: relative;
+}
+
+.nav-center a,
+.nav-center label {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+
+/* ===== UNDERLINE ANIMATION ===== */
+
+.nav-center a::after,
+.nav-center label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s ease;
+}
+
+.nav-center a:hover::after,
+.nav-center label:hover::after {
+  width: 100%;
+}
+
+/* ================= BUTTONS ================= */
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.secondary {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown input {
+  display: none;
+}
+
+.dropdown label i {
+  transition: 0.3s;
+}
+
+.dropdown:hover > label i {
+  transform: rotate(180deg);
+}
+
+/* ================= MEGA MENU ================= */
+
+.mega-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: var(--card-bg);
+  padding: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  min-width: 260px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover > .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-menu a {
+  display: block;
+  padding: 12px 22px;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+.mega-menu a:hover {
+  background: var(--bg-light);
+  color: var(--primary);
+}
+
+/* ================= HAMBURGER ================= */
+
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 1024px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-wrapper {
+    height: auto;
+    padding: 15px;
+  }
+
+  /* 🔥 SLIDE MENU */
+  .nav-center {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+    transition: 0.4s;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  #menu-toggle:checked ~ .nav-center {
+    left: 0;
+  }
+
+  .nav-center ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 20px;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-center li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-center a,
+  .nav-center label {
+    width: 100%;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  /* MOBILE DROPDOWN */
+
+  .mega-menu {
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    padding: 0;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .mega-menu a {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .dropdown input:checked + label + .mega-menu {
+    display: block;
+  }
+
+  .dropdown input:checked + label i {
+    transform: rotate(180deg);
+  }
+
+  /* 🔥 FIXED BUTTONS */
+  .mobile-buttons {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  /* 🔥 HAMBURGER ANIMATION */
+  #menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+/* ================= HIDE TOP HEADER ON MOBILE ================= */
+
+@media (max-width: 768px) {
+  .conference-top {
+    display: none;
+  }
+}
+
+/* ================= MOBILE BUTTONS ================= */
+
+.mobile-buttons {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .mobile-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ================= NAVBAR CODE END HERE ================= */

@@ -1,0 +1,802 @@
+/* ================= SECTION HERO CODE START HERE ================= */
+
+/* SECTION BASE */
+
+.apv-hero {
+  position: relative;
+  padding: 50px 0;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* Background Pattern */
+
+.apv-hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255,255,255,0.12) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  opacity: 0.6;
+}
+
+/* Container Layout */
+
+.apv-hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* LEFT CONTENT */
+
+.apv-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.apv-title {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.apv-description {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 520px;
+  opacity: 0.95;
+}
+
+/* Buttons */
+
+.apv-hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.apv-btn-primary {
+  background: #ffffff;
+  color: var(--gradient-end);
+  padding: 11px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.apv-btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 11px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.apv-btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+.apv-btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* RIGHT IMAGE */
+
+.apv-hero-media {
+  width: 100%;
+}
+
+.apv-media-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(14px);
+  padding: 14px;
+  border-radius: 28px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+}
+
+.apv-media-card img {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+
+  .apv-title {
+    font-size: 42px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .apv-hero-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .apv-hero-content {
+    flex: 1;
+  }
+
+  .apv-hero-media {
+    flex: 1;
+  }
+
+  .apv-title {
+    font-size: 48px;
+  }
+
+}
+/* ================= PARTICLES ================= */
+
+.apv-particles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px
+  );
+  background-size: 25px 25px;
+  animation: apvMoveDots 25s linear infinite;
+  z-index: 1;
+  opacity: 3;
+}
+
+@keyframes apvMoveDots {
+  from { background-position: 0 0; }
+  to { background-position: 250px 250px; }
+}
+
+/* ================= WAVES ================= */
+
+.apv-wave {
+  position: absolute;
+  width: 200%;
+  height: 200px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 40%;
+  animation: apvWaveMove 18s linear infinite;
+  z-index: 1;
+}
+
+.apv-wave1 {
+  bottom: -60px;
+  left: -50%;
+}
+
+.apv-wave2 {
+  bottom: -100px;
+  left: -60%;
+  animation-duration: 25s;
+}
+
+@keyframes apvWaveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Ensure content above particles & waves */
+
+.apv-hero-container,
+.apv-hero-pattern {
+  position: relative;
+  z-index: 2;
+}
+/* ================= SECTION HERO CODE END HERE ================= */
+
+/* ================= SECTION VISION & MISSION CODE START HERE ================= */
+
+.apvm-section {
+  padding: 50px 0;
+  background: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+  color: var(--text-dark);
+}
+
+/* Soft floating background glow */
+
+.apvm-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  background: rgba(186, 9, 9, 0.08);
+  border-radius: 50%;
+  top: -120px;
+  left: -120px;
+  filter: blur(80px);
+}
+
+.apvm-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading */
+
+.apvm-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.apvm-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.apvm-heading h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.apvm-heading p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Grid */
+
+.apvm-grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* Glass Cards */
+
+.apvm-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  padding: 40px 30px;
+  border-radius: 25px;
+  transition: 0.4s ease;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.apvm-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon */
+
+.apvm-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  background: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apvm-icon i {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Text */
+
+.apvm-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.apvm-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+
+  .apvm-heading h2 {
+    font-size: 40px;
+  }
+
+  .apvm-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .apvm-card {
+    padding: 50px 40px;
+  }
+
+}
+/* ================= SECTION VISION & MISSION CODE END HERE ================= */
+
+
+/* =====================================================
+   WHY ATTEND SECTION (PREFIX: apw-)
+   Homepage Vibe Matched
+   ===================================================== */
+
+.apw-section {
+  position: relative;
+  padding: 50px 0;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* ================= PARTICLES ================= */
+
+.apw-particles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255,255,255,0.25) 1px,
+    transparent 1px
+  );
+  background-size: 25px 25px;
+  animation: apwMoveDots 30s linear infinite;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+@keyframes apwMoveDots {
+  from { background-position: 0 0; }
+  to { background-position: 300px 300px; }
+}
+
+/* ================= WAVES ================= */
+
+.apw-wave {
+  position: absolute;
+  width: 200%;
+  height: 200px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 40%;
+  animation: apwWaveMove 20s linear infinite;
+  z-index: 1;
+}
+
+.apw-wave1 {
+  bottom: -60px;
+  left: -50%;
+}
+
+.apw-wave2 {
+  bottom: -110px;
+  left: -60%;
+  animation-duration: 28s;
+}
+
+@keyframes apwWaveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= CONTENT LAYER ================= */
+
+.apw-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+
+.apw-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.apw-header h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.apw-header p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* ================= GRID ================= */
+
+.apw-grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* ================= GLASS CARD ================= */
+
+.apw-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(18px);
+  padding: 35px 25px;
+  border-radius: 25px;
+  text-align: center;
+  transition: 0.4s ease;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+.apw-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon */
+
+.apw-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apw-icon i {
+  font-size: 22px;
+  color: #ffffff;
+}
+
+/* Text */
+
+.apw-card h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.apw-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+
+  .apw-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apw-header h2 {
+    font-size: 38px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .apw-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+
+/* =====================================================
+   ORGANIZED BY SECTION (PREFIX: apob-)
+   Light Background - No Particles / No Waves
+   ===================================================== */
+
+.apob-section {
+  padding: 50px 0;
+  background: var(--bg-light);
+}
+
+/* Container */
+
+.apob-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+
+.apob-card {
+  background: var(--card-bg);
+  padding: 50px 35px;
+  border-radius: 28px;
+  text-align: center;
+  max-width: 750px;
+  width: 100%;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+}
+
+.apob-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Tag */
+
+.apob-tag {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Title */
+
+.apob-title {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* Text */
+
+.apob-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+
+.apob-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.apob-btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 11px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.apob-btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 11px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.apob-btn-primary:hover {
+  background: var(--secondary);
+}
+
+.apob-btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+
+  .apob-title {
+    font-size: 38px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .apob-card {
+    padding: 30px 60px;
+  }
+
+}
+
+
+/* =====================================================
+   CONFERENCE OBJECTIVES (PREFIX: apobj-)
+   Primary Gradient + Particles + Waves
+   ===================================================== */
+
+.apobj-section {
+  position: relative;
+  padding: 50px 0;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  overflow: hidden;
+  color: #ffffff;
+}
+
+/* ================= PARTICLES ================= */
+
+.apobj-particles {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255,255,255,0.25) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  animation: apobjMoveDots 28s linear infinite;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+@keyframes apobjMoveDots {
+  from { background-position: 0 0; }
+  to { background-position: 280px 280px; }
+}
+
+/* ================= WAVES ================= */
+
+.apobj-wave {
+  position: absolute;
+  width: 200%;
+  height: 200px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 40%;
+  animation: apobjWaveMove 22s linear infinite;
+  z-index: 1;
+}
+
+.apobj-wave1 {
+  bottom: -60px;
+  left: -50%;
+}
+
+.apobj-wave2 {
+  bottom: -110px;
+  left: -60%;
+  animation-duration: 30s;
+}
+
+@keyframes apobjWaveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= CONTENT ================= */
+
+.apobj-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+
+.apobj-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.apobj-header h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.apobj-header p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* ================= GRID ================= */
+
+.apobj-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* ================= GLASS CARDS ================= */
+
+.apobj-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(18px);
+  padding: 30px 25px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.4s ease;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+.apobj-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Check Icon */
+
+.apobj-check {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Text */
+
+.apobj-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 768px) {
+
+  .apobj-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .apobj-header h2 {
+    font-size: 38px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .apobj-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}

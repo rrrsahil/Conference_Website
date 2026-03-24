@@ -1,0 +1,193 @@
+/* =====================================================
+   CONFERENCE ASSOCIATION PAGE (PREFIX: apa-)
+   ===================================================== */
+
+/* ================= HERO ================= */
+.apa-hero {
+  padding: 30px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apa-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.apa-hero h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.apa-hero p {
+  font-size: 14px;
+  max-width: 600px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+/* ================= SECTION ================= */
+.apa-section {
+  padding: 50px 20px;
+}
+
+.apa-light {
+  background: var(--bg-light);
+}
+
+.apa-title {
+  text-align: center;
+  font-size: 24px;
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* ================= SLIDER (CENTER FIX) ================= */
+.apa-grid {
+  display: flex;
+  gap: 20px;
+
+  /* Horizontal scroll */
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding-bottom: 10px;
+
+  /* 🔥 CENTER FIX */
+  width: max-content;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Scrollbar */
+.apa-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.apa-grid::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.apa-grid::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* ================= CARD ================= */
+.apa-card {
+  flex: 0 0 auto;
+  width: 220px;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 200px;
+
+  scroll-snap-align: start;
+}
+
+.apa-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* ================= IMAGE ================= */
+.apa-card img {
+  width: 100px;
+  height: 80px;
+
+  object-fit: contain;
+  object-position: center;
+
+  margin-bottom: 15px;
+
+  background: #fff;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* ================= TEXT ================= */
+.apa-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #222;
+}
+
+.apa-card p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ================= CTA ================= */
+.apa-cta {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apa-cta h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.apa-cta p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= BUTTON ================= */
+.apa-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #fff;
+  color: var(--primary);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.apa-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .apa-card {
+    width: 180px;
+  }
+}

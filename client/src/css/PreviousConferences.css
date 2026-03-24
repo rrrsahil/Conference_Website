@@ -1,0 +1,260 @@
+/* ==========================================
+   PREVIOUS CONFERENCES (FINAL PERFECT VERSION)
+========================================== */
+
+/* HERO */
+.apc-hero {
+  padding: 25px 15px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: #fff;
+}
+
+.apc-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.apc-hero h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.apc-hero p {
+  font-size: 13px;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* TIMELINE */
+.apc-timeline-section {
+  padding: 40px 15px;
+  background: var(--bg-light);
+}
+
+.apc-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 25px;
+}
+
+/* LINE */
+.apc-timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(var(--gradient-start), var(--gradient-end));
+}
+
+/* ITEM */
+.apc-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* DOT */
+.apc-dot {
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+/* YEAR */
+.apc-year {
+  font-weight: 600;
+  color: var(--primary);
+  margin-left: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* CARD */
+.apc-card {
+  width: 100%;
+  max-width: 520px;
+  margin-left: 20px;
+
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.apc-card:hover {
+  transform: translateY(-5px);
+}
+
+/* META */
+.apc-meta-line {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* ================= STATS FIX ================= */
+.apc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.apc-stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* NUMBER */
+.apc-stats strong {
+  font-size: 16px;
+  color: var(--primary);
+}
+
+/* LABEL FIX */
+.apc-stats span {
+  font-size: 11px;
+  margin-top: 3px;
+  word-break: break-word;
+}
+
+/* DETAILS */
+.apc-details {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* BUTTON */
+.apc-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 18px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.apc-btn:hover {
+  background: var(--secondary);
+}
+
+/* COMING SOON */
+.coming-soon .apc-card {
+  border: 2px dashed var(--primary);
+}
+
+.apc-coming-label {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 18px;
+  background: #ccc;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* ================= DESKTOP ================= */
+@media (min-width: 768px) {
+  .apc-hero h1 {
+    font-size: 32px;
+  }
+
+  .apc-timeline {
+    padding-left: 40px;
+  }
+
+  .apc-timeline::before {
+    left: 20px;
+  }
+
+  .apc-dot {
+    left: 12px;
+  }
+
+  .apc-card {
+    margin-left: 40px;
+    max-width: 1250px;
+    padding: 25px;
+  }
+
+  .apc-year {
+    margin-left: 40px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .apc-card {
+    padding: 18px;
+  }
+
+  .apc-stats {
+    gap: 6px;
+  }
+
+  .apc-stats strong {
+    font-size: 14px;
+  }
+
+  .apc-stats span {
+    font-size: 10px;
+  }
+
+  .apc-hero h1 {
+    font-size: 22px;
+  }
+}
+
+/* ================= MODAL ================= */
+.apc-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.apc-modal-content {
+  position: relative;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* CROSS */
+.apc-cross {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 22px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

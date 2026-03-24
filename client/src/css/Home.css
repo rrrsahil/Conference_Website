@@ -1,0 +1,1345 @@
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+  --primary: #0d3b7a;
+  --secondary: #1e5aa8;
+  --accent: #4c6fff;
+
+  --gradient-start: #6a8dff;
+  --gradient-end: #2f4fd7;
+
+  --bg-light: #f4f7fb;
+  --card-bg: #ffffff;
+  --text-dark: #1f2d3d;
+  --border-light: #e2e8f0;
+}
+
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-light);
+}
+
+.container {
+  width: 90%;
+  max-width: 1900px;
+  margin: auto;
+}
+
+/* ================= SECTION KEYNOTES CODE START HERE ================= */
+.keynote-strip {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.05)
+  );
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  z-index: 5;
+}
+
+/* Wrapper */
+.keynote-wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Moving Track */
+.keynote-track {
+  display: inline-flex;
+  gap: 60px;
+  padding: 15px 0;
+  animation: keynoteScroll 25s linear infinite;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .keynote-track {
+    animation: keynoteScroll 15s linear infinite;
+  }
+}
+
+/* Text Style */
+.keynote-track span {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0.95;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.keynote-track span:hover {
+  color: #ffd166;
+  transform: scale(1.05);
+}
+
+/* Infinite Scroll Animation */
+@keyframes keynoteScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* ================= SECTION KEYNOTES CODE END HERE ================= */
+
+/* ================= SECTION HERO CODE START HERE ================= */
+
+.hero {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  padding: 35px 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* ================= PARTICLES ================= */
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(255,255,255,0.25) 1px,
+    transparent 1px
+  );
+  background-size: 25px 25px;
+  animation: moveDots 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes moveDots {
+  from { background-position: 0 0; }
+  to { background-position: 200px 200px; }
+}
+
+/* ================= WAVES ================= */
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 40%;
+  animation: waveMove 12s linear infinite;
+  z-index: 1;
+}
+
+.wave1 { bottom: -60px; left: -50%; }
+.wave2 { bottom: -100px; left: -60%; animation-duration: 18s; }
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= WRAPPER ================= */
+
+.hero-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.hero-left {
+  text-align: center;
+}
+
+.theme {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.glass {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+/* ================= COUNTDOWN ================= */
+
+.countdown-clock {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.clock-box {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 16px;
+  min-width: 90px;
+}
+
+.clock-box span {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.clock-box small {
+  font-size: 12px;
+}
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #fff;
+  color: var(--gradient-end);
+}
+
+.btn.outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/* ================= PURE CSS RECTANGLE CAROUSEL ================= */
+
+.hero-carousel {
+  width: 100%;
+  max-width: 500px;
+  height: 278px;
+  margin: 40px auto 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  padding: 12px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+/* Track container */
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Individual slide */
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fadeCarousel 16s infinite;
+}
+
+/* Image styling */
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Delay for each slide */
+.carousel-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.carousel-slide:nth-child(2) {
+  animation-delay: 4s;
+}
+.carousel-slide:nth-child(3) {
+  animation-delay: 8s;
+}
+.carousel-slide:nth-child(4) {
+  animation-delay: 12s;
+}
+
+/* Fade Animation */
+@keyframes fadeCarousel {
+
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+
+}
+/* ================= RIGHT PANEL ================= */
+
+.hero-right {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.hero-right h3 {
+  margin-bottom: 30px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.info-box {
+  background: rgba(255,255,255,0.12);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.info-box h4 {
+  margin-bottom: 15px;
+}
+
+.info-box ul {
+  padding-left: 18px;
+}
+
+.info-box ul li,
+.info-box p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+li a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1024px) {
+
+  .hero-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .hero-left {
+    flex: 1;
+    text-align: left;
+  }
+
+  .hero-right {
+    flex: 1;
+  }
+
+  .countdown-clock {
+    justify-content: flex-start;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .hero-carousel {
+    margin-left: 0;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* ================= SECTION HERO CODE END HERE ================= */
+
+/* ================= SECTION ABOUT CODE START HERE ================= */
+
+.about-section {
+  padding: 65px 0;
+  background: var(--bg-light);
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* LEFT CONTENT */
+
+.about-content {
+  flex: 1;
+}
+
+.section-tag {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.about-content h2 {
+  font-size: 30px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.about-content p {
+  font-size: 15px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.primary-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+}
+
+/* RIGHT SIDE MEDIA */
+
+.about-media {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.media-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 240px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.media-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95);
+  transition: 0.4s ease;
+}
+
+.media-card:hover video {
+  transform: scale(1.03);
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1024px) {
+  .about-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .about-content h2 {
+    font-size: 36px;
+  }
+}
+/* ================= SECTION ABOUT CODE END HERE ================= */
+
+/* ================= SECTION HIGHLIGHTS CODE START HERE ================= */
+
+.highlights {
+  position: relative;
+  padding: 30px 0 65px 0;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Floating Background Dots */
+
+.dots-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.2) 1px,
+    transparent 1px
+  );
+  background-size: 25px 25px;
+  animation: moveDots 25s linear infinite;
+  z-index: 1;
+}
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 300px 300px;
+  }
+}
+
+.highlights-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+/* ================= IMAGES ================= */
+
+.highlight-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+/* Image Card */
+
+.highlight-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  height: 230px;      
+}
+
+/* Force Perfect Crop */
+
+.highlight-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Overlay */
+
+.highlight-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.35),
+    transparent
+  );
+}
+
+/* Hover Zoom */
+
+.highlight-card:hover img {
+  transform: scale(1.06);
+}
+
+/* ================= STATS ================= */
+
+.highlight-stats {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.stat p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* IEEE Logo */
+
+.ieee-logo {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ieee-logo img {
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1024px) {
+
+  .highlight-images {
+    grid-template-columns: 1.2fr 1.2fr 1.2fr; 
+    align-items: stretch;
+  }
+
+  .highlight-card {
+    height: 250px;
+  }
+
+}
+
+/* ================= Mobile ================= */
+
+@media (min-width: 768px) {
+  .highlight-images {
+    flex-direction: row;
+  }
+
+  .highlight-card img {
+    height: 250px;
+  }
+
+  .highlight-stats {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+  }
+
+  .ieee-logo {
+    grid-column: auto;
+    justify-content: flex-end;
+  }
+}
+
+/* ================= SECTION HIGHLIGHTS CODE START HERE ================= */
+
+/* ================= SECTION SPEAKER CODE START HERE ================= */
+
+.speakers-section {
+  padding: 30px 0 65px 0;
+  background: linear-gradient(180deg, #f9fbff, #eef3ff);
+  overflow: hidden;
+}
+
+.speakers-container {
+  width: 90%;
+  max-width: 1500px;
+  margin: auto;
+  text-align: center;
+}
+
+/* HEADER */
+
+.section-header h2 {
+  font-size: 28px;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin: 12px auto 0;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  border-radius: 10px;
+}
+
+/* ================= SLIDER ================= */
+
+.slider {
+  margin-top: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  gap: 30px;
+  width: calc(280px * 8);
+  animation: scroll 25s linear infinite;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .slide-track {
+    animation: scroll 10s linear infinite;
+  }
+}
+
+/* Infinite Scroll */
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+/* ================= PREMIUM CARD ================= */
+
+.speaker-card {
+  min-width: 200px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+/* Gradient overlay */
+
+.image-box {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.image-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* Info */
+
+.speaker-info {
+  padding: 20px;
+}
+
+.speaker-info h4 {
+  font-size: 16px;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.speaker-info p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Premium hover */
+
+.speaker-card:hover {
+  box-shadow: 0 25px 55px rgba(0,0,0,0.15);
+}
+
+/* ================= BUTTON ================= */
+
+.view-btn {
+  margin-top: 60px;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--secondary);
+}
+
+/* ================= MOBILE FIRST ================= */
+
+@media (max-width: 768px) {
+
+  .speaker-card {
+    min-width: 200px;
+  }
+
+  .image-box {
+    height: 220px;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+  }
+
+}
+
+/* ================= SECTION SPEAKER CODE END HERE ================= */
+
+/* ================= SECTION PARTNERS CODE START HERE  ================= */
+
+.partners-section {
+  position: relative;
+  padding: 30px 0 65px 0;
+    background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: white;
+  overflow: hidden;
+}
+
+/* ================= FLOATING DOTS ================= */
+
+.partners-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px
+  );
+  background-size: 25px 25px;
+  animation: moveDots 40s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveDots {
+  from { background-position: 0 0; }
+  to { background-position: 300px 300px; }
+}
+
+/* ================= WAVE ================= */
+
+.partners-wave {
+  position: absolute;
+  bottom: -80px;
+  left: -50%;
+  width: 200%;
+  height: 200px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 45%;
+  animation: waveMove 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= CONTAINER ================= */
+
+.partners-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 2;
+}
+
+/* ================= HEADER ================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header .tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin: 12px auto 0;
+  background: linear-gradient(to right, var(--gradient-end), var(--bg-light));
+  border-radius: 10px;
+}
+
+/* ================= SLIDER ================= */
+
+.partners-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade edges */
+
+.partners-slider::before,
+.partners-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 90px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Track */
+
+.partners-track {
+  display: flex;
+  gap: 40px;
+  animation: scrollPartners 25s linear infinite;
+  align-items: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .partners-track {
+    animation: scrollPartners 2s linear infinite;
+  }
+}
+
+/* Pause on hover */
+
+.partners-slider:hover .partners-track {
+  animation-play-state: paused;
+}
+
+/* Infinite Scroll */
+
+@keyframes scrollPartners {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ================= PARTNER CARD ================= */
+
+.partner {
+  flex: 0 0 auto;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  padding: 10px 10px;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+}
+
+.partner img {
+  height: 55px;
+  width: 100px;
+  object-fit: contain;
+  transition: 0.4s ease;
+}
+
+/* Hover */
+
+.partner:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .partners-track {
+    gap: 40px;
+  }
+
+  .partner {
+    padding: 15px 25px;
+  }
+
+  .partner img {
+    height: 35px;
+  }
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1024px) {
+
+  .section-header h2 {
+    font-size: 36px;
+  }
+
+  .partner img {
+    height: 55px;
+  }
+
+}
+
+/* ================= SECTION PARTNERS CODE END HERE  ================= */
+
+/* ================= SECTION TESTIMONIALS CODE START HERE  ================= */
+
+.testimonials-section {
+  padding: 70px 0;
+  background: var(--bg-light);
+  overflow: hidden;
+}
+
+.testimonials-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header .tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.section-header h2 {
+  font-size: 26px;
+  margin-top: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin: 10px auto 0;
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  border-radius: 10px;
+}
+
+/* ================= SLIDER ================= */
+
+.testimonial-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 25px;
+  animation: scrollTestimonials 25s linear infinite;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .testimonial-track {
+    animation: scrollTestimonials 2s linear infinite;
+  }
+}
+
+/* Pause on hover */
+
+.testimonial-slider:hover .testimonial-track {
+  animation-play-state: paused;
+}
+
+/* Infinite Scroll */
+
+@keyframes scrollTestimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ================= CARD ================= */
+
+.testimonial-card {
+  flex: 0 0 280px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  transition: 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+/* PROFILE */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.profile img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile h4 {
+  font-size: 15px;
+  color: var(--primary);
+}
+
+.profile p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* REVIEW TEXT */
+
+.review {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  opacity: 0.9;
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1024px) {
+
+  .section-header h2 {
+    font-size: 36px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 350px;
+  }
+
+}
+
+/* ================= SECTION TESTIMONIALS CODE END HERE  ================= */
+
+/* ================= SECTION SUPPORTERS CODE START HERE  ================= */
+
+.supporters-section {
+  position: relative;
+  padding: 30px 0 65px 0;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: white;
+  overflow: hidden;
+}
+
+/* ================= FLOATING DOTS ================= */
+
+.supporters-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.25) 1px,
+    transparent 1px
+  );
+  background-size: 25px 25px;
+  animation: moveDots 40s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveDots {
+  from { background-position: 0 0; }
+  to { background-position: 300px 300px; }
+}
+
+/* ================= WAVE ================= */
+
+.supporters-wave {
+  position: absolute;
+  bottom: -80px;
+  left: -50%;
+  width: 200%;
+  height: 200px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 45%;
+  animation: waveMove 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= CONTAINER ================= */
+
+.supporters-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 2;
+}
+
+/* ================= HEADER ================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header .tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+
+/* ================= SLIDER ================= */
+
+.supporters-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Track */
+.supporters-track {
+  display: flex;
+  gap: 40px;
+  animation: scrollSupporters 18s linear infinite;
+  align-items: center;
+}
+
+/* MOBILE SPEED FAST */
+@media (max-width: 768px) {
+  .supporters-track {
+    animation: scrollSupporters 2s linear infinite;
+  }
+}
+/* Pause on hover */
+
+.supporters-slider:hover .supporters-track {
+  animation-play-state: paused;
+}
+
+/* Infinite Scroll */
+
+@keyframes scrollSupporters {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ================= SUPPORTER CARD ================= */
+
+.supporter {
+  flex: 0 0 auto;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  padding: 10px 10px;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+}
+
+.supporter img {
+  height: 55px;
+  width: 100px;
+  object-fit: contain;
+  transition: 0.4s ease;
+}
+
+/* Hover */
+
+.supporter:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .supporters-track {
+    gap: 40px;
+  }
+
+  .supporter {
+    padding: 15px 25px;
+  }
+
+  .supporter img {
+    height: 35px;
+  }
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 1024px) {
+
+  .section-header h2 {
+    font-size: 36px;
+  }
+
+  .supporter img {
+    height: 55px;
+  }
+
+}
+/* ================= SECTION SUPPORTERS CODE END HERE  ================= */
