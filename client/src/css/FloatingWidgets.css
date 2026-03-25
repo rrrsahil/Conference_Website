@@ -174,9 +174,9 @@
 @media (max-width: 768px) {
 
   /* HIDE RIGHT TAB */
-  .rightTab {
+  /* .rightTab {
     display: none;
-  }
+  } */
 
   /* ICON BUTTONS */
   .contactBtn,
