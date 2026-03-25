@@ -297,7 +297,7 @@ const Home = () => {
           <div className="dots-bg" />
           <div className="container highlights-wrapper">
             <h2 className="section-title">
-              Previous PiCET Conference Highlights
+              Previous I²MSET Conference Highlights
             </h2>
             {/* Image Row */}
             <div className="highlight-images">
