@@ -10,7 +10,6 @@
   border-radius: 0 12px 12px 0;
   cursor: pointer;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 14px;
@@ -35,7 +34,6 @@
   border-radius: 12px 0 0 12px;
   cursor: pointer;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 14px;
@@ -66,10 +64,9 @@
 
 .contactBtn:hover {
   transform: translateY(-3px) scale(1.05);
-  background: linear-gradient(135deg, var(--secondary), var(--accent));
 }
 
-/* ================= IMPORTANT DATES BUTTON ================= */
+/* ================= DATES BUTTON ================= */
 .datesBtn {
   position: fixed;
   bottom: 20px;
@@ -87,7 +84,6 @@
 
 .datesBtn:hover {
   transform: translateY(-3px) scale(1.05);
-  background: linear-gradient(135deg, var(--gradient-start), var(--accent));
 }
 
 /* ================= BACKDROP ================= */
@@ -101,7 +97,7 @@
   z-index: 999;
 }
 
-/* ================= SLIDE PANEL ================= */
+/* ================= PANEL ================= */
 .datesPanel {
   position: fixed;
   top: 0;
@@ -117,6 +113,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  backdrop-filter: blur(10px);
 }
 
 .datesPanel.open {
@@ -133,15 +130,13 @@
 
 .panelHeader h3 {
   font-size: 20px;
-  font-weight: 600;
 }
 
 .panelHeader span {
   cursor: pointer;
-  font-size: 18px;
 }
 
-/* ================= SIMPLE LIST ================= */
+/* ================= LIST ================= */
 .simpleList {
   display: flex;
   flex-direction: column;
@@ -153,65 +148,67 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* TITLE */
 .eventTitle {
   font-size: 16px;
   font-weight: 600;
   display: flex;
-  align-items: center;
   gap: 8px;
 }
 
-/* DATE */
 .eventDate {
   font-size: 14px;
   opacity: 0.9;
 }
 
 /* ================= STATUS ================= */
-
-/* COMPLETED */
 .listItem.completed {
   opacity: 0.6;
 }
 
-.done {
-  color: #00ff88;
-  font-size: 12px;
-}
+.done { color: #00ff88; }
+.today { background: red; padding: 2px 6px; border-radius: 6px; font-size: 10px; }
+.live { background: green; padding: 2px 6px; border-radius: 6px; font-size: 10px; }
+.next { background: orange; padding: 2px 6px; border-radius: 6px; font-size: 10px; }
 
-/* TODAY */
-.today {
-  background: red;
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-size: 10px;
-}
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
 
-/* LIVE */
-.live {
-  background: green;
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-size: 10px;
-}
+  /* HIDE RIGHT TAB */
+  .rightTab {
+    display: none;
+  }
 
-/* NEXT */
-.next {
-  background: orange;
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-size: 10px;
-}
+  /* ICON BUTTONS */
+  .contactBtn,
+  .datesBtn {
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0; /* hide text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-/* ================= ANIMATION ================= */
-@keyframes pulse {
-  0% { box-shadow: 0 0 5px #ffd700; }
-  50% { box-shadow: 0 0 15px #ffd700; }
-  100% { box-shadow: 0 0 5px #ffd700; }
-}
+  .contactBtn {
+    bottom: 80px;
+  }
 
-/* ================= OPTIONAL GLASS EFFECT ================= */
-.datesPanel {
-  backdrop-filter: blur(10px);
+  .datesBtn {
+    bottom: 20px;
+    right: auto;
+  }
+
+  /* ICONS */
+  .contactBtn::before {
+    content: "📩";
+    font-size: 20px;
+  }
+
+  .datesBtn::before {
+    content: "📅";
+    font-size: 20px;
+  }
 }
